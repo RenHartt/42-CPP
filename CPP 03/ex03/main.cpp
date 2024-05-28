@@ -6,28 +6,22 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 18:22:37 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/23 20:05:04 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/05/28 16:06:21 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
-	ClapTrap clapTrap("ClapTrap");
-	ClapTrap clapTrap2(clapTrap);
-	ScavTrap scavTrap("ScavTrap");
-	ScavTrap scavTrap2(scavTrap);
+	DiamondTrap diamondTrap("Billy");
 
-	clapTrap.attack("target");
-	clapTrap.takeDamage(10);
-	clapTrap.beRepaired(5);
-
-	scavTrap.attack("target");
-	scavTrap.takeDamage(10);
-	scavTrap.beRepaired(5);
-	scavTrap.guardGate();
+	diamondTrap.attack("Target");
+	diamondTrap.takeDamage(10);
+	diamondTrap.beRepaired(5);
+	diamondTrap.guardGate();
+	diamondTrap.highFivesGuys();
+	diamondTrap.whoAmI();
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:09:21 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/23 20:15:42 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/05/28 14:40:51 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 FragTrap::FragTrap(): ClapTrap()
 {
-	_name = "FragTrap";
-	_hitPoint = 10;
-	_energyPoint = 10;
-	_attackDamage = 0;
+	_hitPoint = 100;
+	_energyPoint = 100;
+	_attackDamage = 30;
 
 	std::cout << "FragTrap default constructor called" << std::endl;
 }

@@ -6,18 +6,17 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:09:21 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/23 20:15:42 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/05/28 15:44:03 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(): ClapTrap()
+FragTrap::FragTrap(void): ClapTrap()
 {
-	_name = "FragTrap";
-	_hitPoint = 10;
-	_energyPoint = 10;
-	_attackDamage = 0;
+	_hitPoint = 100;
+	_energyPoint = 100;
+	_attackDamage = 30;
 
 	std::cout << "FragTrap default constructor called" << std::endl;
 }
@@ -39,7 +38,7 @@ FragTrap::FragTrap(const FragTrap &copy): ClapTrap(copy)
 	std::cout << "FragTrap copy constructor called" << std::endl;
 }
 
-FragTrap::~FragTrap()
+FragTrap::~FragTrap(void)
 {
 	std:: cout << "FragTrap destructor called" << std::endl;
 }

@@ -6,18 +6,17 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 19:30:59 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/23 20:10:37 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/05/28 16:04:00 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(): ClapTrap()
+ScavTrap::ScavTrap(void): ClapTrap()
 {
-	_name = "ScavTrap";
-	_hitPoint = 10;
-	_energyPoint = 10;
-	_attackDamage = 0;
+	_hitPoint = 100;
+	_energyPoint = 50;
+	_attackDamage = 20;
 
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
@@ -39,7 +38,7 @@ ScavTrap::ScavTrap(const ScavTrap &copy): ClapTrap(copy)
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
-ScavTrap::~ScavTrap()
+ScavTrap::~ScavTrap(void)
 {
 	std:: cout << "ScavTrap destructor called" << std::endl;
 }

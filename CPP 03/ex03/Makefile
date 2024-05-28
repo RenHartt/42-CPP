@@ -6,13 +6,13 @@
 #    By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/23 16:34:45 by bgoron            #+#    #+#              #
-#    Updated: 2024/05/23 20:17:06 by bgoron           ###   ########.fr        #
+#    Updated: 2024/05/28 16:11:48 by bgoron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = FragTrap
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
-FLAGS = -Wall -Wextra -Werror -std=c++98
+NAME = DiamondTrap
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98
 OBJS_DIR = .objs
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
 

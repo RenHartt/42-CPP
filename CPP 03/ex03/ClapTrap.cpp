@@ -6,13 +6,13 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:37:11 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/23 19:54:46 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/05/28 16:03:33 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap(void)
 {
 	_name = "ClapTrap";
 	_hitPoint = 10;
@@ -39,7 +39,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
 	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
-ClapTrap::~ClapTrap()
+ClapTrap::~ClapTrap(void)
 {
 	std:: cout << "ClapTrap destructor called" << std::endl;
 }

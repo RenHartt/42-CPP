@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 19:30:59 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/23 20:04:01 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/05/28 14:40:01 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 
 ScavTrap::ScavTrap(): ClapTrap()
 {
-	_name = "ScavTrap";
-	_hitPoint = 10;
-	_energyPoint = 10;
-	_attackDamage = 0;
+	_hitPoint = 100;
+	_energyPoint = 50;
+	_attackDamage = 20;
 
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }

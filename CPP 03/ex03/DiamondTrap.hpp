@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:55:37 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/28 15:40:32 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/05/29 13:52:04 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,11 @@ class DiamondTrap: public ScavTrap, public FragTrap
 
 		void whoAmI(void);
 		using ScavTrap::attack;
+		
 
 	private:
 		std::string _name;
-		
-		using FragTrap::_hitPoint;
-		using ScavTrap::_energyPoint;
-		using FragTrap::_attackDamage;
+
 };
 
 #endif

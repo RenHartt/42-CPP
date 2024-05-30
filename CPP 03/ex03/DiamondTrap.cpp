@@ -6,18 +6,21 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:56:54 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/24 18:19:50 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/05/30 14:17:31 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
+#include "ClapTrap.hpp"
 
 DiamondTrap::DiamondTrap(void)
 {
+	_name = "DiamondTrap";
+	ClapTrap::_name = _name + "_clap_name";
 	std::cout << "DiamondTrap constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), _name(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), _name(name)
 {
 	std::cout << "DiamondTrap " << _name << " constructor called" << std::endl;
 }

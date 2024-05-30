@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 19:31:09 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/24 17:07:25 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/05/29 15:04:10 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ class ScavTrap : virtual public ClapTrap
 		ScavTrap &operator=(const ScavTrap &copy);
 
 		void guardGate(void);
+		void attack(const std::string &target);
+
+	protected:
+		unsigned int _energyPoint;
 };
 
 #endif

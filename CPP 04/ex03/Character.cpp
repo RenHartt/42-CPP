@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 19:01:35 by bgoron            #+#    #+#             */
-/*   Updated: 2024/06/04 15:26:06 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 17:09:36 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,18 @@ Character::~Character(void)
 Character &Character::operator=(const Character &copy)
 {
 	if (this != &copy)
-		this->_name = copy._name;
+	{
+		_name = copy._name;
+		for (int i = 0; i < 4; i++)
+		{
+			if (_materia[i])
+				delete _materia[i];
+			if (copy._materia[i])
+				_materia[i] = copy._materia[i]->clone();
+			else
+				_materia[i] = NULL;
+		}
+	}
 
 	return (*this);
 }

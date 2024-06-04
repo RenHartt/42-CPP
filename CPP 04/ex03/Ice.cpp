@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 19:01:30 by bgoron            #+#    #+#             */
-/*   Updated: 2024/06/04 13:32:05 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:27:19 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ Ice::~Ice(void)
 Ice &Ice::operator=(const Ice &copy)
 {
 	if (this != &copy)
-	{
 		this->type = copy.type;
-	}
 
 	return (*this);
 }

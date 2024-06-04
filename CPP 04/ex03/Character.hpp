@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 19:12:33 by bgoron            #+#    #+#             */
-/*   Updated: 2024/06/04 15:14:47 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:26:42 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Character : public ICharacter
 
 		std::string const &getName(void) const;
 		AMateria *getMateria(int idx) const;
+
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter &target);

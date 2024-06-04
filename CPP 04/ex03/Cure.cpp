@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 19:01:26 by bgoron            #+#    #+#             */
-/*   Updated: 2024/06/04 13:28:33 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:26:49 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ Cure::~Cure(void)
 Cure &Cure::operator=(const Cure &copy)
 {
 	if (this != &copy)
-	{
 		this->type = copy.type;
-	}
 
 	return (*this);
 }

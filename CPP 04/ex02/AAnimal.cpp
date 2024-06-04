@@ -15,6 +15,7 @@
 AAnimal::AAnimal(void)
 {
 	this->type = "AAnimal";
+
 	std::cout << "AAnimal default constructor called" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 19:01:35 by bgoron            #+#    #+#             */
-/*   Updated: 2024/06/04 13:50:15 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:26:06 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ Character::Character(void)
 {
 	for (int i = 0; i < 4; i++)
 		_materia[i] = NULL;
+
 	std::cout << "Character default constructor called" << std::endl;
 }
 
@@ -28,6 +29,7 @@ Character::Character(const Character &copy) : _name(copy._name)
 		else
 			_materia[i] = NULL;
 	}
+
 	std::cout << "Character copy constructor called" << std::endl;
 }
 
@@ -35,6 +37,7 @@ Character::Character(std::string name) : _name(name)
 {
 	for (int i = 0; i < 4; i++)
 		_materia[i] = NULL;
+
 	std::cout << "Character name constructor called" << std::endl;
 }
 
@@ -51,9 +54,7 @@ Character::~Character(void)
 Character &Character::operator=(const Character &copy)
 {
 	if (this != &copy)
-	{
 		this->_name = copy._name;
-	}
 
 	return (*this);
 }
@@ -82,7 +83,5 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter &target)
 {
 	if (idx >= 0 && idx < 4 && _materia[idx])
-	{
 		_materia[idx]->use(target);
-	}
 }

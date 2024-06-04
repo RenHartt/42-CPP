@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:39:45 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/31 17:43:22 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:21:54 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Dog : public Animal
 
     private:
         void makeSound(void) const;
-        Brain *brain;
+        Brain *_brain;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 19:01:40 by bgoron            #+#    #+#             */
-/*   Updated: 2024/06/04 13:55:28 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:27:43 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 MateriaSource::MateriaSource(void)
 {
 	for (int i = 0; i < 4; i++)
-	{
 		_materia[i] = NULL;
-	}
 	
 	std::cout << "MateriaSource default constructor called" << std::endl;
 }
@@ -35,9 +33,7 @@ MateriaSource::~MateriaSource(void)
 	for (int i = 0; i < 4; i++)
 	{
 		if (_materia[i])
-		{
 			delete _materia[i];
-		}
 	}
 	std::cout << "MateriaSource destructor called" << std::endl;
 }
@@ -49,13 +45,9 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &copy)
 		for (int i = 0; i < 4; i++)
 		{
 			if (copy._materia[i])
-			{
 				this->_materia[i] = copy._materia[i]->clone();
-			}
 			else
-			{
 				this->_materia[i] = NULL;
-			}
 		}
 	}
 
@@ -79,9 +71,7 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 	for (int i = 0; i < 4; i++)
 	{
 		if (_materia[i] && _materia[i]->getType() == type)
-		{
 			return (_materia[i]->clone());
-		}
 	}
 
 	return (NULL);

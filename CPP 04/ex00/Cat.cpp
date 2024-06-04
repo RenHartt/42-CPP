@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:38:45 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/31 16:47:59 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:20:21 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat(void)
 {
 	this->type = "Cat";
+
 	std::cout << "Cat default constructor called" << std::endl;
 }
 

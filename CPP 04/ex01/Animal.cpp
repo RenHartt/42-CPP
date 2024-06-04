@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:32:57 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/31 15:39:59 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:21:03 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Animal::Animal(void)
 {
 	this->type = "Animal";
+
 	std::cout << "Animal default constructor called" << std::endl;
 }
 

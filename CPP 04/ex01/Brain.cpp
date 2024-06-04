@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 15:51:35 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/31 16:56:40 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:23:37 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ Brain &Brain::operator=(const Brain &copy)
 	if (this != &copy)
 	{
 		for (int i = 0; i < 100; i++)
-			this->ideas[i] = copy.ideas[i];
+		{
+			this->_ideas[i] = copy._ideas[i];
+		}
 	}
 
 	return (*this);

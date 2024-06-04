@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 15:51:54 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/31 16:53:03 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:24:13 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Brain
 		Brain &operator=(const Brain &copy);
 
 	private:
-		std::string ideas[100];
+		std::string _ideas[100];
 };
 
 #endif

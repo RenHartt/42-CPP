@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 19:01:20 by bgoron            #+#    #+#             */
-/*   Updated: 2024/06/04 13:32:40 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:26:17 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,4 @@ AMateria::~AMateria(void)
 
 std::string const &AMateria::getType(void) const { return (type); }
 
-void AMateria::use(ICharacter &target)
-{
-	(void)target;
-}
+void AMateria::use(ICharacter &target) { (void)target; }

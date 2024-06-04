@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:39:12 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/31 15:26:55 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:20:56 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 WrongCat::WrongCat(void)
 {
 	this->type = "WrongCat";
+
 	std::cout << "WrongCat default constructor called" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:38:57 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/31 16:49:45 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:20:32 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Dog::Dog(void)
 {
 	this->type = "Dog";
+
 	std::cout << "Dog default constructor called" << std::endl;
 }
 

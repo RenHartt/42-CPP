@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   Floor.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/31 19:13:09 by bgoron            #+#    #+#             */
-/*   Updated: 2024/06/04 15:18:25 by bgoron           ###   ########.fr       */
+/*   Created: 2024/06/04 13:44:33 by bgoron            #+#    #+#             */
+/*   Updated: 2024/06/04 15:15:43 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-# define MATERIASOURCE_HPP
+#ifndef FLOOR_HPP
+# define FLOOR_HPP
 
 # include "AMateria.hpp"
-# include "IMateriaSource.hpp"
 
-class MateriaSource : public IMateriaSource
+class Floor
 {
 	public:
-		MateriaSource(void);
-		MateriaSource(const MateriaSource &copy);
-		~MateriaSource(void);
+		Floor(void);
+		Floor(Floor const &copy);
+		~Floor(void);
 
-		MateriaSource &operator=(const MateriaSource &copy);
+		Floor &operator=(Floor const &copy);
 
-		void learnMateria(AMateria*);
-		AMateria* createMateria(std::string const &type);
+		void setFloor(AMateria *materia);
+		AMateria *getFloor(int idx) const;
 
 	private:
-		AMateria *_materia[4];
+		AMateria *_floor[1000];
 };
 
 #endif

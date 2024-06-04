@@ -6,12 +6,12 @@
 #    By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 14:32:12 by bgoron            #+#    #+#              #
-#    Updated: 2024/05/31 19:03:13 by bgoron           ###   ########.fr        #
+#    Updated: 2024/06/04 14:05:02 by bgoron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animal
-SRCS = main.cpp AMateria.cpp ICharacter.cpp Cure.cpp Ice.cpp IMateriaSource.cpp
+NAME = Materia
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp Floor.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 OBJS_DIR = .objs
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))

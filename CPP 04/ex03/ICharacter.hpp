@@ -6,18 +6,26 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 19:01:38 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/31 19:09:33 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:17:34 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
+# include <iostream>
+
+class AMateria;
+
 class ICharacter
 {
 	public:
-	protected:
-	private:
+		virtual ~ICharacter(void) {}
+		virtual std::string const &getName(void) const = 0;
+		virtual AMateria *getMateria(int idx) const = 0;
+		virtual void equip(AMateria *m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter &target) = 0;
 };
 
 #endif

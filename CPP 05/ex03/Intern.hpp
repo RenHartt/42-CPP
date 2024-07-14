@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace.hpp                                        :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/18 17:29:57 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/11 17:27:25 by bgoron           ###   ########.fr       */
+/*   Created: 2024/07/14 17:32:31 by bgoron            #+#    #+#             */
+/*   Updated: 2024/07/14 19:01:53 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_HPP
-# define REPLACE_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 # include <string>
+# include "AForm.hpp"
 
-int	replace(std::string fileName, std::string s1, std::string s2);
-int	printError(std::string error);
+class Intern
+{
+	public:
+		Intern(void);
+		Intern(const Intern &copy);
+		~Intern(void);
+
+		Intern &operator=(Intern const &copy);
+
+		AForm *makeForm(const std::string &name, const std::string &target);
+};
 
 #endif

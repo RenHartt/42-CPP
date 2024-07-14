@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 13:13:06 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/07 13:54:16 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/14 15:44:30 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define BUREAUCRAT_HPP
 
 # include <string>
+
+class AForm;
 
 class Bureaucrat
 {
@@ -27,10 +29,30 @@ class Bureaucrat
 
 		std::string getName(void) const;
 		int getGrade(void) const;
+		void promotion(void);
+		void demotion(void);
+		void executeForm(const AForm &form);
 
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+		class FormNotSigned : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
 	private:
 		const std::string	_name;
 		int					_grade;
 };
+
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
 
 #endif

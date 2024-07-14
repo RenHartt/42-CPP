@@ -6,11 +6,14 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:29:39 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/28 16:08:55 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/11 17:28:50 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.hpp"
+#include <fstream>
+#include <iostream>
+#include <sstream>
 
 int	printError(std::string error)
 {

@@ -6,95 +6,77 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 23:32:31 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 13:32:23 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 21:44:12 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 #include <exception>
 #include <iostream>
 
+void UnknownForm(void)
+{
+	Bureaucrat yoda("Yoda", 1);
+	std::cout << yoda;
+	Intern luke;
+	AForm *form = luke.makeForm("Random shit", "Darth Vader");
+	std:: cout << *form << std::endl;
+	form->beSigned(yoda);
+	form->execute(yoda);
+}
+
+void ShrubberyForm(void)
+{
+	Bureaucrat yoda("Yoda", 1);
+	std::cout << yoda;
+	Intern luke;
+	AForm *form = luke.makeForm("Shrubbery creation", "Yoda");
+	std::cout << *form << std::endl;
+	form->beSigned(yoda);
+	form->execute(yoda);
+}
+
+void RobotomyForm(void)
+{
+	Bureaucrat yoda("Yoda", 1);
+	std::cout << yoda;
+	Intern luke;
+	AForm *form = luke.makeForm("Robotomy request", "Yoda");
+	std::cout << *form << std::endl;
+	form->beSigned(yoda);
+	form->execute(yoda);
+}
+
+void PresidentialForm(void)
+{
+	Bureaucrat yoda("Yoda", 1);
+	std::cout << yoda;
+	Intern luke;
+	AForm *form = luke.makeForm("Presidential pardon", "Yoda");
+	std::cout << *form << std::endl;
+	form->beSigned(yoda);
+	form->execute(yoda);
+}
+
 int main(void) 
 {
-	try
-	{
-		Bureaucrat yoda("Yoda", 1);
-		std::cout << yoda;
 
-		ShrubberyCreationForm form("Form");
-		form.beSigned(yoda);
-		form.execute(yoda);
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << "An error occurred: " << e.what() << std::endl;
-	}
-
+	try { UnknownForm(); }
+	catch (const std::exception &e) { std::cerr << "An error occurred: " << e.what() << std::endl; }
 	std::cout << std::endl;
 	
-	try
-	{
-		Bureaucrat obiWan("Obi-Wan", 1);
-		std::cout << obiWan;
-
-		RobotomyRequestForm form("Form");
-		form.beSigned(obiWan);
-		form.execute(obiWan);
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << "An error occurred: " << e.what() << std::endl;
-	}
-
+	try { ShrubberyForm(); }
+	catch (const std::exception &e) { std::cerr << "An error occurred: " << e.what() << std::endl; }
 	std::cout << std::endl;
-
-	try
-	{
-		Bureaucrat anakin("Anakin", 100);
-		std::cout << anakin;
-		
-		PresidentialPardonForm form("Form");
-		form.beSigned(anakin);
-		form.execute(anakin);
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << "An error occurred: " << e.what() << std::endl;
-	}
-
+	
+	try { RobotomyForm(); }
+	catch (const std::exception &e) { std::cerr << "An error occurred: " << e.what() << std::endl; }
 	std::cout << std::endl;
-
-	try
-	{
-		Bureaucrat ahsoka("Ahsoka", 150);
-		std::cout << ahsoka;
-
-		PresidentialPardonForm form("Form");
-		form.beSigned(ahsoka);
-		form.execute(ahsoka);
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << "An error occurred: " << e.what() << std::endl;
-	}
-
+	
+	try { PresidentialForm(); }
+	catch (const std::exception &e) { std::cerr << "An error occurred: " << e.what() << std::endl; }
 	std::cout << std::endl;
-
-	try
-	{
-		Bureaucrat sdf("dfsfd", 1);
-		Intern intern;
-		AForm *form = intern.makeForm("Robotomy request", "target");
-		form->beSigned(sdf);
-		form->execute(sdf);
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << "An error occurred: " << e.what() << std::endl;
-	}
+	
     return (0);
 }

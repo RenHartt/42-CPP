@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 13:20:25 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 12:37:00 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 18:34:10 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,13 +87,14 @@ void Bureaucrat::executeForm(const AForm &form)
 	if(!form.getIsSigned())
 	{
 		std::cout << form.getName() << " cannot be executed because it is not signed." << std::endl;
+		throw Bureaucrat::FormNotSigned();
 	}
 	else if (form.getExecGrade() < this->_grade)
 	{
 		std::cout << getName() << " cannot execute " << form.getName() << " because his grade is too low." <<std::endl;
+		throw Bureaucrat::GradeTooLowException();
 	}
 
 	form.execute(*this);
-	
 	std::cout << getName() << " executed " << form.getName()  << std::endl;
 }

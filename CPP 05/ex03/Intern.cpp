@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 17:32:34 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 13:10:39 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 14:42:08 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,11 @@ AForm* Intern::makeForm(const std::string &name, const std::string &target)
         }
     }
     std::cerr << "Unknown form type: " << name << std::endl;
+	throw Intern::unknownForm();
     return (NULL);
+}
+
+const char *Intern::unknownForm::what(void) const throw()
+{
+	return ("Unknown form.");
 }

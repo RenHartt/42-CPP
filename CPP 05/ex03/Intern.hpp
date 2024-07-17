@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 17:32:31 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 13:13:27 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 14:40:26 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ class Intern
 		Intern &operator=(Intern const &copy);
 
 		AForm *makeForm(const std::string &name, const std::string &target);
+		
+		class unknownForm : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
 };
 
 #endif

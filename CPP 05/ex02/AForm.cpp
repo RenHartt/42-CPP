@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 21:17:31 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 12:36:23 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 18:32:32 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,12 @@ void AForm::execute(const Bureaucrat &copy) const
 {
 	if (copy.getGrade() > _execGrade)
 	{
+		std::cout << copy.getName() << " couldn't execute " << this->_name << " because of grade too low." << std::endl; 
         throw Bureaucrat::GradeTooLowException();
 	}
 	if (!_isSigned)
 	{
+		std::cout << copy.getName() << " couldn't execute " << this->_name << " because of form not signed." << std::endl;
 		throw Bureaucrat::FormNotSigned();
 	}
 }
@@ -74,3 +76,15 @@ const char *AForm::openFileFailed::what(void) const throw()
 {
 	return ("Grade too High.");
 }
+
+std::ostream &operator<<(std::ostream &out, const AForm &form)
+{
+	out << "Name : " << form.getName() << std::endl;
+	out << "Is signed : " << (form.getIsSigned() ? "true" : "false") << std::endl;
+	out << "Grade to sign : " << form.getSignGrade() << std::endl;
+	out << "Grade to execute : " << form.getExecGrade() << std::endl;
+
+	return (out);
+}
+
+

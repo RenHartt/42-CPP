@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 21:17:37 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 12:36:36 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 17:57:50 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ class AForm
 		const int			_signGrade;
 		const int			_execGrade;
 };
+
+std::ostream &operator<<(std::ostream &out, const AForm &form);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 21:17:37 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 12:36:00 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 16:51:50 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Form
 
 		Form &operator=(const Form &copy);
 		
+		bool getIsSigned(void) const;
+		std::string getName(void) const;
 		int getExecGrade(void) const;
 		int getSignGrade(void) const;
 		void beSigned(const Bureaucrat &copy);
@@ -38,5 +40,7 @@ class Form
 		const int			_signGrade;
 		const int			_execGrade;
 };
+
+std::ostream &operator<<(std::ostream &out, const Form &form);
 
 #endif

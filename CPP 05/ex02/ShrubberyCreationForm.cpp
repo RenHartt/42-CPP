@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:22:03 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 12:38:56 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 18:27:17 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(void):
 	AForm("ShrubberyCreationForm", 145, 137) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target):
-	AForm("ShrubberyCreationForm", 25, 5),
+	AForm("ShrubberyCreationForm", 145, 137),
 	_target(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) { *this = copy; }

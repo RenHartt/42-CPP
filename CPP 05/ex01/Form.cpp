@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 21:17:31 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 12:35:43 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 17:03:59 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,13 @@ Form::Form(const std::string name, const int signGrade, const int execGrade):
 	_isSigned(false),
 	_name(name),
 	_signGrade(signGrade),
-	_execGrade(execGrade) {}
+	_execGrade(execGrade)
+	{
+		if (_signGrade > 150 || _execGrade > 150)
+			throw Bureaucrat::GradeTooLowException();
+		if (_signGrade < 1 || _execGrade < 1)
+			throw Bureaucrat::GradeTooHighException();
+	}
 
 Form::Form(const Form &copy):
 	_isSigned(copy._isSigned),
@@ -42,6 +48,8 @@ Form &Form::operator=(const Form &copy)
 	return *this;
 }
 
+bool Form::getIsSigned(void) const { return(_isSigned); }
+std::string Form::getName(void) const { return(_name); }
 int Form::getSignGrade(void) const { return (_signGrade); }
 int Form::getExecGrade(void) const { return (_execGrade); }
 
@@ -55,3 +63,14 @@ void	Form::beSigned(const Bureaucrat &copy)
 	std::cout << copy.getName() << " sign " << this->_name << "." << std::endl;
 	this->_isSigned = true;
 }
+
+std::ostream &operator<<(std::ostream &out, const Form &form)
+{
+	out << "Name : " << form.getName() << std::endl;
+	out << "Is signed : " << (form.getIsSigned() ? "true" : "false") << std::endl;
+	out << "Grade to sign : " << form.getSignGrade() << std::endl;
+	out << "Grade to execute : " << form.getExecGrade() << std::endl;
+
+	return (out);
+}
+

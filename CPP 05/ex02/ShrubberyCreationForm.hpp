@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 22:35:12 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/14 15:17:20 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 12:39:09 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm(void);
 		ShrubberyCreationForm(const std::string &target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
-		virtual ~ShrubberyCreationForm(void);
-	
+		~ShrubberyCreationForm(void);
+		
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &copy);
 
 		std::string getTarget(void) const;

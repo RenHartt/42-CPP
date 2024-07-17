@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 21:17:31 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/10 17:10:05 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 12:35:43 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,33 +17,21 @@ Form::Form(void):
 	_isSigned(false),
 	_name("Form"),	
 	_signGrade(150),
-	_execGrade(150)
-{	
-	std::cout << "Form default constructor called." << std::endl;
-}
+	_execGrade(150) {}
 
 Form::Form(const std::string name, const int signGrade, const int execGrade):
 	_isSigned(false),
 	_name(name),
 	_signGrade(signGrade),
-	_execGrade(execGrade)
-{
-	std::cout << "Form parameters constructor called." << std::endl;
-}
+	_execGrade(execGrade) {}
 
 Form::Form(const Form &copy):
 	_isSigned(copy._isSigned),
 	_name(copy._name),
 	_signGrade(copy._signGrade),
-	_execGrade(copy._execGrade)
-{
-	std::cout << "Form copy constructor called." << std::endl;
-}
+	_execGrade(copy._execGrade) {}
 
-Form::~Form(void)
-{
-	std::cout << "Form destructor called." << std::endl;
-}
+Form::~Form(void) {}
 
 Form &Form::operator=(const Form &copy)
 {

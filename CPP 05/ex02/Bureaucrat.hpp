@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 13:13:06 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/14 15:44:30 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 12:37:14 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ class Bureaucrat
 			public:
 				const char *what() const throw();
 		};
+
 	private:
 		const std::string	_name;
 		int					_grade;

@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 21:17:31 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/14 17:16:28 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 13:09:29 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,33 +17,21 @@ AForm::AForm(void):
 	_isSigned(false),
 	_name("AForm"),	
 	_signGrade(150),
-	_execGrade(150)
-{	
-	std::cout << "AForm default constructor called." << std::endl;
-}
+	_execGrade(150) {}
 
 AForm::AForm(const std::string name, const int signGrade, const int execGrade):
 	_isSigned(false),
 	_name(name),
 	_signGrade(signGrade),
-	_execGrade(execGrade)
-{
-	std::cout << "AForm parameters constructor called." << std::endl;
-}
+	_execGrade(execGrade) {}
 
 AForm::AForm(const AForm &copy):
 	_isSigned(copy._isSigned),
 	_name(copy._name),
 	_signGrade(copy._signGrade),
-	_execGrade(copy._execGrade)
-{
-	std::cout << "AForm copy constructor called." << std::endl;
-}
+	_execGrade(copy._execGrade) {}
 
-AForm::~AForm(void)
-{
-	std::cout << "AForm destructor called." << std::endl;
-}
+AForm::~AForm(void) {}
 
 AForm &AForm::operator=(const AForm &copy)
 {

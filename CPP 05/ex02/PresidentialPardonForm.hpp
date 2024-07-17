@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 20:22:34 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/14 15:16:51 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 12:38:04 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm(void);
 		PresidentialPardonForm(const std::string &target);
 		PresidentialPardonForm(const PresidentialPardonForm &copy);
-		virtual ~PresidentialPardonForm(void);
-			
+		~PresidentialPardonForm(void);
+
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &copy);
 
 		std::string getTarget(void) const;

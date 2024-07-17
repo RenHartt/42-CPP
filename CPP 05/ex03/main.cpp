@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 23:32:31 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/14 19:15:26 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 13:32:23 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(void)
 	{
 		Bureaucrat yoda("Yoda", 1);
 		std::cout << yoda;
-		
+
 		ShrubberyCreationForm form("Form");
 		form.beSigned(yoda);
 		form.execute(yoda);
@@ -76,6 +76,21 @@ int main(void)
 		PresidentialPardonForm form("Form");
 		form.beSigned(ahsoka);
 		form.execute(ahsoka);
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << "An error occurred: " << e.what() << std::endl;
+	}
+
+	std::cout << std::endl;
+
+	try
+	{
+		Bureaucrat sdf("dfsfd", 1);
+		Intern intern;
+		AForm *form = intern.makeForm("Robotomy request", "target");
+		form->beSigned(sdf);
+		form->execute(sdf);
 	}
 	catch (const std::exception &e)
 	{

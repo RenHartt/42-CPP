@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 13:20:25 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/14 19:10:26 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 13:10:07 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@
 
 Bureaucrat::Bureaucrat(void):
 	_name("Bureaucrat"),
-	_grade(150) 
-{
-	std::cout << "Bureaucrat default constructor called." << std::endl;
-}
+	_grade(150) {} 
 
 Bureaucrat::Bureaucrat(std::string const name, int grade):
 	_name(name),
@@ -29,21 +26,11 @@ Bureaucrat::Bureaucrat(std::string const name, int grade):
 		throw Bureaucrat::GradeTooLowException();
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
-	
-	std::cout << "Bureaucrat name constructor called." << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &copy)
-{
-	*this = copy;
-	
-	std::cout << "Bureaucrat copy constructor called." << std::endl;
-}
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) { *this = copy; }
 
-Bureaucrat::~Bureaucrat(void)
-{
-	std::cout << "Bureaucrat destructor called." << std::endl;
-}
+Bureaucrat::~Bureaucrat(void) {}
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy)
 {

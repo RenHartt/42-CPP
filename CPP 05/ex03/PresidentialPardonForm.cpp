@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:15:28 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/14 00:12:25 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 13:11:12 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,15 @@
 
 PresidentialPardonForm::PresidentialPardonForm(void):
 	AForm("PresidentialPardonForm", 25, 5),
-	_target("Target")
-{
-	std::cout << "PresidentialPardonForm default constructor called." << std::endl;
-}
+	_target("Target") {}
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target):
 	AForm("PresidentialPardonForm", 25, 5),
-	_target(target)
-{
-	std::cout << "PresidentialPardonForm target constructor called." << std::endl;
-}
+	_target(target) {}
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy)
-{
-	*this = copy;
-	
-	std::cout << "PresidentialPardonForm copy constructor called." << std::endl;
-}
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) { *this = copy; }
 
-PresidentialPardonForm::~PresidentialPardonForm(void)
-{
-	std::cout << "PresidentialPardonForm destructor called." << std::endl;
-}
+PresidentialPardonForm::~PresidentialPardonForm(void) {}
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &copy)
 {
@@ -51,10 +37,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 	return (*this);
 }
 
-std::string PresidentialPardonForm::getTarget(void) const
-{
-	return (this->_target);
-}
+std::string PresidentialPardonForm::getTarget(void) const { return (this->_target); }
 
 void PresidentialPardonForm::execute(const Bureaucrat &copy) const
 {

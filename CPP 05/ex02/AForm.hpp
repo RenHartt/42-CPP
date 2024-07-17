@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 21:17:37 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/14 17:16:31 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 12:36:36 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class AForm
 		AForm(void);
 		AForm(const std::string name, const int signGrade, const int execGrade);
 		AForm(const AForm &copy);
-		virtual ~AForm(void);
+		~AForm(void);
 
 		AForm &operator=(const AForm &copy);
 		std::string getName(void) const;		
@@ -38,6 +38,7 @@ class AForm
 			public:
 				const char *what() const throw();
 		};
+
 	private:
 		bool				_isSigned;
 		const std::string	_name;

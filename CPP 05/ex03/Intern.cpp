@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 17:32:34 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/14 19:09:20 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 13:10:39 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,13 @@
 #include "PresidentialPardonForm.hpp"
 #include <iostream>
 
-Intern::Intern(void)
-{
-	std::cout << "Intern default constructor called." << std::endl;
-}
+Intern::Intern(void) {}
 
-Intern::Intern(const Intern &copy)
-{
-	*this = copy;	
+Intern::Intern(const Intern &copy) { *this = copy; }
 
-	std::cout << "Intern copy constructor called." << std::endl;
-}
+Intern::~Intern(void) {}
 
-Intern::~Intern(void)
-{
-	std::cout << "Intern destructor called." << std::endl;
-}
-
-Intern &Intern::operator=(__attribute__((unused))const Intern &copy)
-{
-	return (*this);
-}
+Intern &Intern::operator=(__attribute__((unused))const Intern &copy) { return (*this); }
 
 AForm* Intern::makeForm(const std::string &name, const std::string &target)
 {

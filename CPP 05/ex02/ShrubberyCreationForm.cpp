@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:22:03 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/14 00:12:05 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 12:38:56 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,15 @@
 #include <iostream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(void):
-	AForm("ShrubberyCreationForm", 145, 137)
-{
-	std::cout << "ShrubberyCreationForm default constructor called." << std::endl;
-}
+	AForm("ShrubberyCreationForm", 145, 137) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target):
 	AForm("ShrubberyCreationForm", 25, 5),
-	_target(target)
-{
-	std::cout << "ShrubberyCreationForm target constructor called." << std::endl;
-}
+	_target(target) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy)
-{
-	*this = copy;
-	
-	std::cout << "ShrubberyCreationForm copy constructor called." << std::endl;
-}
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) { *this = copy; }
 
-ShrubberyCreationForm::~ShrubberyCreationForm(void)
-{
-	std::cout << "ShrubberyCreationForm destructor called." << std::endl;
-}
+ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &copy)
 {
@@ -51,10 +37,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*this);
 }
 
-std::string ShrubberyCreationForm::getTarget(void) const
-{
-	return (this->_target);
-}
+std::string ShrubberyCreationForm::getTarget(void) const { return (this->_target); }
 
 void ShrubberyCreationForm::execute(const Bureaucrat &copy) const
 {

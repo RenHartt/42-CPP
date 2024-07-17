@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:21:19 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/14 17:23:59 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 12:38:24 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,18 @@
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
+#include <sys/wait.h>
 
 RobotomyRequestForm::RobotomyRequestForm(void):
-	AForm("RobotomyRequestForm", 72, 45)
-{
-	std::cout << "RobotomyRequestForm default constructor called." << std::endl;
-}
+	AForm("RobotomyRequestForm", 72, 45) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target):
 	AForm("RobotomyRequestForm", 25, 5),
-	_target(target)
-{
-	std::cout << "RobotomyRequestForm target constructor called." << std::endl;
-}
+	_target(target) {}
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy)
-{
-	*this = copy;
-	
-	std::cout << "RobotomyRequestForm copy constructor called." << std::endl;
-}
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) { *this = copy; }
 
-RobotomyRequestForm::~RobotomyRequestForm(void)
-{
-	std::cout << "RobotomyRequestForm destructor called." << std::endl;
-}
+RobotomyRequestForm::~RobotomyRequestForm(void) {}
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &copy)
 {
@@ -52,12 +39,8 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &c
 	return (*this);
 }
 
-std::string RobotomyRequestForm::getTarget(void) const
-{
-	return (this->_target);
-}
+std::string RobotomyRequestForm::getTarget(void) const { return (this->_target); }
 
-#include <sys/wait.h>
 void RobotomyRequestForm::execute(const Bureaucrat &copy) const
 {	
 	AForm::execute(copy);

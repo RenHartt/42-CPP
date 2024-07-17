@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 21:21:00 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/14 15:17:09 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/17 13:17:34 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm(void);
 		RobotomyRequestForm(const std::string &target);
 		RobotomyRequestForm(const RobotomyRequestForm &copy);
-		virtual ~RobotomyRequestForm(void);
-	
+		~RobotomyRequestForm(void);
+
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &copy);
 
 		std::string getTarget(void) const;

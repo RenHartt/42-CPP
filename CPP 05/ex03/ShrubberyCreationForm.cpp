@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:22:03 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 13:12:48 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/18 11:22:16 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,37 @@ void ShrubberyCreationForm::execute(const Bureaucrat &copy) const
 	treeFile.open(treeFileName.c_str(), std::ios::out);
 	if (treeFile.is_open())
 	{
-		treeFile << "Tree." << std::endl;
+		treeFile << "                leaf.leaf.leaf." << std::endl;
+		treeFile << "        leaf.leaf.leaf.leaf.leaf." << std::endl;
+		treeFile << "  leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf." << std::endl;
+		treeFile << "   leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf." << std::endl;
+		treeFile << "  leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf." << std::endl;
+		treeFile << "leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf." << std::endl;
+		treeFile << "   leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf." << std::endl;
+		treeFile << "leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf." << std::endl;
+		treeFile << "  leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf." << std::endl;
+		treeFile << "leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf." << std::endl;
+		treeFile << "leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf." << std::endl;
+		treeFile << "  leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf." << std::endl;
+		treeFile << "   leaf.leaf.leaf.leaf.leaf.leaf.leaf.leaf." << std::endl;
+		treeFile << "     leaf.leaf.leaf.trunk.leaf.leaf.leaf." << std::endl;
+		treeFile << "       leaf.leaf.trunk.trunk.leaf.leaf." << std::endl;
+		treeFile << "	            trunk.trunk." << std::endl;
+		treeFile << "		           trunk.     leaf.leaf.leaf." << std::endl;
+		treeFile << "		           trunk.    trunk.trunk.leaf." << std::endl;
+		treeFile << "		            trunk.trunk.   leaf.leaf." << std::endl;
+		treeFile << "		             trunk.          leaf." << std::endl;
+		treeFile << "		             trunk." << std::endl;
+		treeFile << "		            trunk." << std::endl;
+		treeFile << "		            trunk." << std::endl;
+		treeFile << "		           trunk." << std::endl;
+		treeFile << "		          trunk." << std::endl;
+		treeFile << "	           root.root." << std::endl;
+		treeFile << "	        root.root.root.root." << std::endl;
+		treeFile << "	      root.  root.  root.root." << std::endl;
+		treeFile << "      root.    root.      root.root." << std::endl;
+		treeFile << "   root.    root.      root.     root.root." << std::endl;
+		treeFile << "                               root.    root." << std::endl;
 	}
 	else
 	{

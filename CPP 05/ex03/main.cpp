@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 23:32:31 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 21:44:12 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/18 10:58:32 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void UnknownForm(void)
 	std:: cout << *form << std::endl;
 	form->beSigned(yoda);
 	form->execute(yoda);
+	delete form;
 }
 
 void ShrubberyForm(void)
@@ -35,6 +36,7 @@ void ShrubberyForm(void)
 	std::cout << *form << std::endl;
 	form->beSigned(yoda);
 	form->execute(yoda);
+	delete form;
 }
 
 void RobotomyForm(void)
@@ -46,6 +48,7 @@ void RobotomyForm(void)
 	std::cout << *form << std::endl;
 	form->beSigned(yoda);
 	form->execute(yoda);
+	delete form;
 }
 
 void PresidentialForm(void)
@@ -57,6 +60,7 @@ void PresidentialForm(void)
 	std::cout << *form << std::endl;
 	form->beSigned(yoda);
 	form->execute(yoda);
+	delete form;
 }
 
 int main(void) 

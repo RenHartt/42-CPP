@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 21:53:55 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/21 19:24:18 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/22 13:37:51 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,6 @@
 # define SCALARCONVERTER_HPP
 
 # include <string>
-
-enum Type
-{
-	Char,
-	Int,
-	Float,
-	Double,
-	Unknown
-};
 
 class ScalarConverter
 {

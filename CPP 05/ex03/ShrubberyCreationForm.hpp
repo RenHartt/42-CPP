@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 22:35:12 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 13:17:38 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/24 12:58:55 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class ShrubberyCreationForm : public AForm
 
 		std::string getTarget(void) const;
 
-		virtual void execute(const Bureaucrat &copy) const;
+		virtual void execute(const Bureaucrat &executor) const;
+
 	private:
 		std::string _target;
 

@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 13:20:25 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 18:34:10 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/24 12:52:47 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,28 +46,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy)
 std::string Bureaucrat::getName(void) const { return (_name); }
 int Bureaucrat::getGrade(void) const { return (_grade); }
 
-const char *Bureaucrat::GradeTooHighException::what(void) const throw()
-{
-	return ("Grade too High.");
-}
-
-const char *Bureaucrat::GradeTooLowException::what(void) const throw()
-{
-	return ("Grade too Low.");
-}
-
-const char *Bureaucrat::FormNotSigned::what(void) const throw()
-{
-	return ("Form not signed.");
-}
-
-std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
-{
-	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << "." << std::endl;
-
-	return (out);
-}
-
 void Bureaucrat::promotion(void)
 {
 	if (this->_grade == 1)
@@ -82,12 +60,17 @@ void Bureaucrat::demotion(void)
 	this->_grade++;
 }
 
+void Bureaucrat::signForm(AForm &form)
+{
+	form.beSigned(*this);
+}
+
 void Bureaucrat::executeForm(const AForm &form)
 {
 	if(!form.getIsSigned())
 	{
 		std::cout << form.getName() << " cannot be executed because it is not signed." << std::endl;
-		throw Bureaucrat::FormNotSigned();
+		throw AForm::FormNotSigned();
 	}
 	else if (form.getExecGrade() < this->_grade)
 	{
@@ -97,4 +80,21 @@ void Bureaucrat::executeForm(const AForm &form)
 
 	form.execute(*this);
 	std::cout << getName() << " executed " << form.getName()  << std::endl;
+}
+
+const char *Bureaucrat::GradeTooHighException::what(void) const throw()
+{
+	return ("Grade too High.");
+}
+
+const char *Bureaucrat::GradeTooLowException::what(void) const throw()
+{
+	return ("Grade too Low.");
+}
+
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
+{
+	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << "." << std::endl;
+
+	return (out);
 }

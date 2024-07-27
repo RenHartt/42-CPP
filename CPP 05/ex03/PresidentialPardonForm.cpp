@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:15:28 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 13:11:12 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/24 12:57:38 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 
 std::string PresidentialPardonForm::getTarget(void) const { return (this->_target); }
 
-void PresidentialPardonForm::execute(const Bureaucrat &copy) const
+void PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
-	AForm::execute(copy);
+	AForm::execute(executor);
 
 	std::cout << getTarget() << " has been pardonned by Zaphod Beeblebrox" << std::endl;
 }

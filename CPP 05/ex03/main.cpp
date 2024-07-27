@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 23:32:31 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/18 10:58:32 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/24 12:18:56 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void UnknownForm(void)
 	std::cout << yoda;
 	Intern luke;
 	AForm *form = luke.makeForm("Random shit", "Darth Vader");
-	std:: cout << *form << std::endl;
+	std:: cout << *form;
 	form->beSigned(yoda);
 	form->execute(yoda);
 	delete form;
@@ -33,7 +33,7 @@ void ShrubberyForm(void)
 	std::cout << yoda;
 	Intern luke;
 	AForm *form = luke.makeForm("Shrubbery creation", "Yoda");
-	std::cout << *form << std::endl;
+	std::cout << *form;
 	form->beSigned(yoda);
 	form->execute(yoda);
 	delete form;
@@ -45,7 +45,7 @@ void RobotomyForm(void)
 	std::cout << yoda;
 	Intern luke;
 	AForm *form = luke.makeForm("Robotomy request", "Yoda");
-	std::cout << *form << std::endl;
+	std::cout << *form;
 	form->beSigned(yoda);
 	form->execute(yoda);
 	delete form;
@@ -57,7 +57,7 @@ void PresidentialForm(void)
 	std::cout << yoda;
 	Intern luke;
 	AForm *form = luke.makeForm("Presidential pardon", "Yoda");
-	std::cout << *form << std::endl;
+	std::cout << *form;
 	form->beSigned(yoda);
 	form->execute(yoda);
 	delete form;

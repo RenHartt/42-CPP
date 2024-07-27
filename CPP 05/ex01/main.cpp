@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 13:49:03 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 17:08:11 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/24 12:48:12 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,23 @@
 #include "Form.hpp"
 #include <iostream>
 
-void goodForm(void)
+void goodFormBeSigned(void)
 {
 	Bureaucrat yoda("Yoda", 1);
 	std::cout << yoda;
 	Form form("Form", 100, 50);
 	std::cout << form;
 	form.beSigned(yoda);
+	std::cout << form;
+}
+
+void goodFormSignForm(void)
+{
+	Bureaucrat yoda("Yoda", 1);
+	std::cout << yoda;
+	Form form("Form", 100, 50);
+	std::cout << form;
+	yoda.signForm(form);
 	std::cout << form;
 }
 
@@ -66,7 +76,11 @@ void executionGradeTooHighForm(void)
 
 int main(void)
 {
-	try { goodForm(); }
+	try { goodFormBeSigned(); }
+	catch (std::exception & e) { std::cerr << "Caught exception: " << e.what() << std::endl; }
+	std::cout << std::endl;
+
+	try { goodFormSignForm(); }
 	catch (std::exception & e) { std::cerr << "Caught exception: " << e.what() << std::endl; }
 	std::cout << std::endl;
 

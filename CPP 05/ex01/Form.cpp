@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 21:17:31 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 17:03:59 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/24 12:22:05 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ Form::Form(const std::string name, const int signGrade, const int execGrade):
 	_execGrade(execGrade)
 	{
 		if (_signGrade > 150 || _execGrade > 150)
-			throw Bureaucrat::GradeTooLowException();
+			throw Form::GradeTooLowException();
 		if (_signGrade < 1 || _execGrade < 1)
-			throw Bureaucrat::GradeTooHighException();
+			throw Form::GradeTooHighException();
 	}
 
 Form::Form(const Form &copy):
@@ -58,10 +58,20 @@ void	Form::beSigned(const Bureaucrat &copy)
 	if (getSignGrade() < copy.getGrade())
 	{
 		std::cout << copy.getName() << " couldn't sign " << this->_name << " because of grade too low." << std::endl;
-		throw Bureaucrat::GradeTooLowException();
+		throw Form::GradeTooLowException();
 	}
 	std::cout << copy.getName() << " sign " << this->_name << "." << std::endl;
 	this->_isSigned = true;
+}
+
+const char *Form::GradeTooHighException::what(void) const throw()
+{
+	return ("Grade too High.");
+}
+
+const char *Form::GradeTooLowException::what(void) const throw()
+{
+	return ("Grade too Low.");
 }
 
 std::ostream &operator<<(std::ostream &out, const Form &form)
@@ -73,4 +83,3 @@ std::ostream &operator<<(std::ostream &out, const Form &form)
 
 	return (out);
 }
-

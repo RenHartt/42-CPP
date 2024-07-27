@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:21:19 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 13:11:41 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/24 12:58:03 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
+#include <sys/wait.h>
 
 RobotomyRequestForm::RobotomyRequestForm(void):
 	AForm("RobotomyRequestForm", 72, 45) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target):
-	AForm("RobotomyRequestForm", 25, 5),
+	AForm("RobotomyRequestForm", 72, 45),
 	_target(target) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) { *this = copy; }
@@ -40,10 +41,9 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &c
 
 std::string RobotomyRequestForm::getTarget(void) const { return (this->_target); }
 
-#include <sys/wait.h>
-void RobotomyRequestForm::execute(const Bureaucrat &copy) const
+void RobotomyRequestForm::execute(const Bureaucrat &execute) const
 {	
-	AForm::execute(copy);
+	AForm::execute(execute);
 
 	std::cout << "\a" << std::flush;
 

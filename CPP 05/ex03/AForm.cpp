@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 21:17:31 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 19:26:59 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/27 14:34:13 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,28 @@ void AForm::execute(const Bureaucrat &copy) const
 	if (!_isSigned)
 	{
 		std::cout << copy.getName() << " couldn't execute " << this->_name << " because of form not signed." << std::endl;
-		throw Bureaucrat::FormNotSigned();
+		throw AForm::FormNotSigned();
 	}
+}
+
+const char *AForm::GradeTooHighException::what(void) const throw()
+{
+	return ("Grade too High.");
+}
+
+const char *AForm::GradeTooLowException::what(void) const throw()
+{
+	return ("Grade too Low.");
+}
+
+const char *AForm::FormNotSigned::what(void) const throw()
+{
+	return ("Form not signed.");
 }
 
 const char *AForm::openFileFailed::what(void) const throw()
 {
-	return ("Grade too High.");
+	return ("Open failed.");
 }
 
 std::ostream &operator<<(std::ostream &out, const AForm &form)

@@ -6,16 +6,16 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:21:19 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 18:27:04 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/24 12:55:21 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
-#include <cstdlib>
-#include <iostream>
-#include <ctime>
 #include <sys/wait.h>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm(void):
 	AForm("RobotomyRequestForm", 72, 45) {}
@@ -41,9 +41,9 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &c
 
 std::string RobotomyRequestForm::getTarget(void) const { return (this->_target); }
 
-void RobotomyRequestForm::execute(const Bureaucrat &copy) const
+void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {	
-	AForm::execute(copy);
+	AForm::execute(executor);
 
 	std::cout << "\a" << std::flush;
 
@@ -59,4 +59,3 @@ void RobotomyRequestForm::execute(const Bureaucrat &copy) const
 		std::cout << "Robotomy failed." << std::endl;
 	}
 }
-

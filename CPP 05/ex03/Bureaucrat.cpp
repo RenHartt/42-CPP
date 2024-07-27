@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 13:20:25 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 19:00:58 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/24 12:51:00 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,6 @@ const char *Bureaucrat::GradeTooLowException::what(void) const throw()
 	return ("Grade too Low.");
 }
 
-const char *Bureaucrat::FormNotSigned::what(void) const throw()
-{
-	return ("Form not signed.");
-}
-
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 {
 	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << "." << std::endl;
@@ -82,12 +77,17 @@ void Bureaucrat::demotion(void)
 	this->_grade++;
 }
 
+void Bureaucrat::signForm(AForm &form)
+{
+	form.beSigned(*this);
+}
+
 void Bureaucrat::executeForm(const AForm &form)
 {
 	if(!form.getIsSigned())
 	{
 		std::cout << form.getName() << " cannot be executed because it is not signed." << std::endl;
-		throw Bureaucrat::FormNotSigned();
+		throw AForm::FormNotSigned();
 	}
 	else if (form.getExecGrade() < this->_grade)
 	{

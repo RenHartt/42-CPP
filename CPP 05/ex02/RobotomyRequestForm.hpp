@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 21:21:00 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/17 12:38:40 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/24 12:55:34 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ class RobotomyRequestForm : public AForm
 
 		std::string getTarget(void) const;
 
-		void execute(const Bureaucrat &copy) const;
+		void execute(const Bureaucrat &executor) const;
+
 	private:
 		std::string _target;
-
 
 };
 

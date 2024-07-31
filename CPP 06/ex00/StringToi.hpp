@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   StringTo.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 21:54:50 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/27 14:47:30 by bgoron           ###   ########.fr       */
+/*   Created: 2024/07/21 19:58:41 by bgoron            #+#    #+#             */
+/*   Updated: 2024/07/23 12:37:51 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
-#include <iostream>
+#ifndef STRINGTO_HPP
+# define STRINGTO_HPP
 
-int main (int argc, char **argv)
-{
-	if (argc != 2)
-	{
-		std::cout << "argc != 2" << std::endl;
-		std::cout << "Always two there are...no more...no less. A master and an apprentice." << std::endl;
-		return (-1);
-	}
-	ScalarConverter::convert(argv[1]);
+# include <string>
 
-	return (0);
-}
+int strtoi(const std::string &string);
+
+#endif
+

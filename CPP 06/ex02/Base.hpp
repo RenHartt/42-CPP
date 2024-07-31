@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 21:54:50 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/27 14:47:30 by bgoron           ###   ########.fr       */
+/*   Created: 2024/07/27 17:05:19 by bgoron            #+#    #+#             */
+/*   Updated: 2024/07/29 18:37:33 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
-#include <iostream>
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int main (int argc, char **argv)
+class Base
 {
-	if (argc != 2)
-	{
-		std::cout << "argc != 2" << std::endl;
-		std::cout << "Always two there are...no more...no less. A master and an apprentice." << std::endl;
-		return (-1);
-	}
-	ScalarConverter::convert(argv[1]);
+	public:
+		virtual ~Base(void);
+};
 
-	return (0);
-}
+class A : public Base {};
+class B : public Base {};
+class C : public Base {};
+
+Base* generate(void);
+void identify(Base* p);
+void identify(Base& p);
+
+#endif

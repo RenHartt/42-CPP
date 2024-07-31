@@ -6,12 +6,12 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 21:53:38 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/23 12:38:20 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/07/27 14:47:20 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-#include "StringTo.hpp"
+#include "StringToi.hpp"
 #include "PrintType.hpp"
 #include "GetType.hpp"
 #include <cstdlib>

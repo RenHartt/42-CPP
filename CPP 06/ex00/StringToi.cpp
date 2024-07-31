@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   StringTo.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 21:54:50 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/27 14:47:30 by bgoron           ###   ########.fr       */
+/*   Created: 2024/07/21 19:51:00 by bgoron            #+#    #+#             */
+/*   Updated: 2024/07/23 12:38:03 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
-#include <iostream>
+#include <sstream>
+#include <string>
 
-int main (int argc, char **argv)
+int strtoi(const std::string &string)
 {
-	if (argc != 2)
-	{
-		std::cout << "argc != 2" << std::endl;
-		std::cout << "Always two there are...no more...no less. A master and an apprentice." << std::endl;
-		return (-1);
-	}
-	ScalarConverter::convert(argv[1]);
+	int result;
+	std::stringstream stream(string);
 
-	return (0);
+	stream >> result;
+	return (result);
 }

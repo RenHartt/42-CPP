@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 21:54:50 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/27 14:47:30 by bgoron           ###   ########.fr       */
+/*   Created: 2024/07/27 14:53:50 by bgoron            #+#    #+#             */
+/*   Updated: 2024/07/27 17:00:07 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
-#include <iostream>
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
-int main (int argc, char **argv)
+# include <stdint.h>
+
+struct Data
 {
-	if (argc != 2)
-	{
-		std::cout << "argc != 2" << std::endl;
-		std::cout << "Always two there are...no more...no less. A master and an apprentice." << std::endl;
-		return (-1);
-	}
-	ScalarConverter::convert(argv[1]);
+	unsigned long data;
+};
 
-	return (0);
-}
+class Serializer
+{
+	public:
+		static uintptr_t serialize(Data* ptr);
+		static Data* deserialize(uintptr_t raw);
+	
+	private:
+		Serializer(void);
+		Serializer(unsigned long data);
+		Serializer(const Serializer& copy);
+		~Serializer(void);
+
+		Serializer& operator=(const Serializer& copy);
+};
+
+#endif

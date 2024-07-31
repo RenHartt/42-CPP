@@ -6,12 +6,12 @@
 #    By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/17 21:52:59 by bgoron            #+#    #+#              #
-#    Updated: 2024/07/27 14:46:55 by bgoron           ###   ########.fr        #
+#    Updated: 2024/07/29 18:36:34 by bgoron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScalarConverter
-SRCS = main.cpp ScalarConverter.cpp GetType.cpp StringToi.cpp PrintType.cpp
+NAME = Base
+SRCS = main.cpp Base.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 OBJS_DIR = .objs
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))

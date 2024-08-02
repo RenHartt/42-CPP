@@ -3,18 +3,6 @@
 
 #define MAX_VAL 750
 
-int	main(void)
-{
-	Array<int>	a(4);
-	a[0] = 5;
-	Array<int>	b(4);
-	b[0] = 0;
-
-	a = b;
-	return 0;
-}
-
-/*
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -64,4 +52,3 @@ int main(int, char**)
     delete [] mirror;//
     return 0;
 }
-*/

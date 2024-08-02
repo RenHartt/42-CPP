@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 16:59:16 by bgoron            #+#    #+#             */
-/*   Updated: 2024/08/01 16:43:10 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/02 14:42:34 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ Array<T>::Array(std::size_t n) :
 {}
 
 template <typename T>
-Array<T>::Array(const Array &copy)
-{
-	*this = copy;
-}
+Array<T>::Array(const Array &copy) :
+    _array(new T[copy._size]),
+    _size(copy._size)
+{}
 
 template <typename T>
 Array<T>::~Array(void)

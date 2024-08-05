@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 14:37:44 by bgoron            #+#    #+#             */
-/*   Updated: 2024/08/05 14:22:21 by bgoron           ###   ########.fr       */
+/*   Created: 2024/08/04 16:32:25 by bgoron            #+#    #+#             */
+/*   Updated: 2024/08/04 18:03:00 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-# define WHATEVER_HPP
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
-#include <utility>
-
-template<typename T>
-void swap(T &a, T &b)
-{
-	std::swap(a, b);
-}
+# include <algorithm>
+# include <stdexcept>
 
 template<typename T>
-T min(T a, T b)
+typename T::iterator easyfind(T list, int toFind)
 {
-    return (a < b ? a : b);
-}
-
-template<typename T>
-T max(T a, T b)
-{
-    return (a > b ? a : b);
+	typename T::iterator result = std::find(list.begin(), list.end(), toFind);
+	if (result == list.end())
+		throw std::runtime_error("Not found.");
+	return (result);
 }
 
 #endif

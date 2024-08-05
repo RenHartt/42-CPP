@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 14:37:44 by bgoron            #+#    #+#             */
-/*   Updated: 2024/08/05 14:22:21 by bgoron           ###   ########.fr       */
+/*   Created: 2024/08/04 19:17:01 by bgoron            #+#    #+#             */
+/*   Updated: 2024/08/04 19:56:36 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-# define WHATEVER_HPP
+#ifndef SPAN_HPP
+# define SPAN_HPP
 
-#include <utility>
-
-template<typename T>
-void swap(T &a, T &b)
+class Span
 {
-	std::swap(a, b);
-}
+	public:
+		Span(void);
+		Span(unsigned int N);
+		Span(const Span &copy);
+		~Span(void);
 
-template<typename T>
-T min(T a, T b)
-{
-    return (a < b ? a : b);
-}
+		Span &operator=(const Span &copy);
+		
+		void addNumber(int number);
+		int shortestSpan(void);
+		int longestSpan(void);
 
-template<typename T>
-T max(T a, T b)
-{
-    return (a > b ? a : b);
-}
+	private:
+		int *_tab;
+};
 
 #endif

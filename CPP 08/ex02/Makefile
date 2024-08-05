@@ -6,11 +6,11 @@
 #    By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/17 21:52:59 by bgoron            #+#    #+#              #
-#    Updated: 2024/08/05 14:37:48 by bgoron           ###   ########.fr        #
+#    Updated: 2024/08/04 16:33:00 by bgoron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Array
+NAME = easyfind
 SRCS = main.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 OBJS_DIR = .objs

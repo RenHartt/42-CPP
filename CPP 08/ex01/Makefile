@@ -6,12 +6,12 @@
 #    By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/17 21:52:59 by bgoron            #+#    #+#              #
-#    Updated: 2024/08/05 14:41:59 by bgoron           ###   ########.fr        #
+#    Updated: 2024/08/06 18:53:02 by baptistegoron    ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Span
-SRCS = main.cpp
+SRCS = main.cpp Span.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 OBJS_DIR = .objs
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))

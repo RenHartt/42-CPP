@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 18:05:50 by bgoron            #+#    #+#             */
-/*   Updated: 2024/07/30 18:35:34 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/08 19:26:51 by baptistegoron    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <exception>
+#include <typeinfo>
 
 Base::~Base(void) {}
 
@@ -81,5 +82,5 @@ void identify(Base& p)
 		(void)c;
 		std::cout << "C" << std::endl;
 	}
-	catch (const std::exception& e) {}
+	catch (const std::bad_cast& e) {}
 }

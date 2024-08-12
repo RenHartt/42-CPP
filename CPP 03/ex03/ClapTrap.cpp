@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:37:11 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/29 11:40:10 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/12 16:17:42 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,3 +104,4 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << _name << " be repaired ";
 	std::cout << amount << " points of damage!" << std::endl;
 }
+

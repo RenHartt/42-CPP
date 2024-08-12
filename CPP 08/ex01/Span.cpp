@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:42:47 by bgoron            #+#    #+#             */
-/*   Updated: 2024/08/09 15:14:04 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/12 15:58:43 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ Span &Span::operator=(const Span &copy)
 
 void Span::addNumber(int number)
 {
-	std::cout << "Index : " << _index << std::endl;
-	std::cout << "Size : " << _size << std::endl;
 	if (_index >= _size)
 	{
         throw std::out_of_range("Array is full.");
@@ -59,9 +57,13 @@ void Span::addNumber(int number)
 unsigned int Span::shortestSpan(void) const
 {
 	if (_index < 2)
+	{
 		throw std::length_error("Not enough numbers to have a span.");
+	}
+
 	unsigned int shortestSpan = UINT_MAX;
 	std::list<int> sortedList = _array;
+	
 	sortedList.sort();
 	
 	for (std::list<int>::const_iterator current = sortedList.begin(), next = ++sortedList.begin(); next != sortedList.end(); current++, next++)
@@ -76,7 +78,10 @@ unsigned int Span::shortestSpan(void) const
 unsigned int Span::longestSpan(void) const
 {
 	if (_index < 2)
+	{
 		throw std::length_error("Not enough numbers to have a span.");
+	}
+
 	int minElement = *std::min_element(_array.begin(), _array.end());
 	int maxElement = *std::max_element(_array.begin(), _array.end());
 

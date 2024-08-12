@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:56:54 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/30 14:17:31 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/12 16:22:48 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,12 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &copy)
 void DiamondTrap::whoAmI(void)
 {
 	std::cout << "My name is " << this->_name << " and my ClapTrap name is " << ClapTrap::_name << std::endl;
+}
+
+void DiamondTrap::printValue(void)
+{
+	std::cout << "Name : " << _name << std::endl;
+	std::cout << "Hit point : " << _hitPoint << std::endl;
+	std::cout << "Energy point : " << _energyPoint << std::endl;
+	std::cout << "Attack damage : " << _attackDamage << std::endl;
 }

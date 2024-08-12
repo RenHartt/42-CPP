@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:55:37 by bgoron            #+#    #+#             */
-/*   Updated: 2024/08/12 16:20:46 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/12 17:31:27 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class DiamondTrap: public ScavTrap, public FragTrap
 		DiamondTrap &operator=(DiamondTrap const &copy);
 
 		void whoAmI(void);
-		using ScavTrap::attack;
 		
 		void printValue(void);
 	private:

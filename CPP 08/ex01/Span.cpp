@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:42:47 by bgoron            #+#    #+#             */
-/*   Updated: 2024/08/12 15:58:43 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/12 19:26:56 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,9 @@ unsigned int Span::shortestSpan(void) const
 	for (std::list<int>::const_iterator current = sortedList.begin(), next = ++sortedList.begin(); next != sortedList.end(); current++, next++)
 	{
 		if (static_cast<unsigned int>(*next - *current) < shortestSpan)
+		{
 			shortestSpan = *next - *current;
+		}
 	}
 
 	return (shortestSpan);

@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 16:32:25 by bgoron            #+#    #+#             */
-/*   Updated: 2024/08/04 18:03:00 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/12 19:10:46 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ typename T::iterator easyfind(T list, int toFind)
 {
 	typename T::iterator result = std::find(list.begin(), list.end(), toFind);
 	if (result == list.end())
+	{
 		throw std::runtime_error("Not found.");
+	}
+
 	return (result);
 }
 

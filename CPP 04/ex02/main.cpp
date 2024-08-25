@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 13:12:24 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/31 18:56:03 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/14 12:43:24 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int main(void)
 		delete chenil[i];
 	}
 
-	// const Animal *animal = new Animal();
+	const AAnimal *animal = new AAnimal();
 
 	return (0);
 }

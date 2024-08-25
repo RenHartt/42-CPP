@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:09:11 by bgoron            #+#    #+#             */
-/*   Updated: 2024/05/23 16:21:33 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/13 17:35:22 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ class Point
 		const Fixed getY(void) const;
 
 	private:
-		Fixed const _x;
-		Fixed const _y;
+		 const Fixed _x;
+		 const Fixed _y;
 	
 };
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+bool bsp(const Point a, const Point b, const Point c, const Point point);
 
 #endif

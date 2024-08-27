@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 09:23:16 by bgoron            #+#    #+#             */
-/*   Updated: 2024/08/25 14:51:58 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/27 16:53:59 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ bool fillContainer(char **argv, ContainerA &containerA, ContainerB &containerB)
 {
 	while (*argv)
 	{
-		std::size_t number(strtol(*argv, NULL, 0));
+		char *endptr;
+		std::size_t number(strtol(*argv, &endptr, 0));
 
-		if (isPositiveInt(number) == true)
+		if (isPositiveInt(number) == true && *endptr == '\0')
 		{
 			containerA.push_back(static_cast<int>(number));
 			containerB.push_back(static_cast<int>(number));
@@ -50,7 +51,6 @@ void printContainer(Container &container)
         std::cout << *it;
         it++;
     }
-    
     for (; it != container.end(); it++)
 	{
         std::cout << " " << *it;
@@ -59,42 +59,38 @@ void printContainer(Container &container)
 }
 
 template <typename Container>
-Container mergePair(Container &left, Container &right, std::vector<std::size_t> jacobsthalSequence)
+Container mergePair(Container &left, Container &right)
 {
-	Container merged;
+    Container merged;
 
-	std::size_t i = 0, j = 0, pos = 0;
+    std::size_t i = 0, j = 0;
 
-	while (i < left.size() && j < right.size())
-	{
-		pos = std::min(jacobsthalSequence[merged.size() + 1], merged.size());
+    while (i < left.size() && j < right.size())
+    {
+        if (left[i] < right[j])
+        {
+            merged.push_back(left[i]);
+            i++;
+        }
+        else
+        {
+            merged.push_back(right[j]);
+            j++;
+        }
+    }
 
-		if (left[i] < right[j])
-		{
-			merged.insert(merged.begin() + pos, left[i]);
-			i++;
-		}
-		else
-		{
-			merged.insert(merged.begin() + pos, right[j]);
-			j++;
-		}
-	}
-
-	while (i < left.size())
-	{
-		pos = std::min(jacobsthalSequence[merged.size() + 1], merged.size());
-        merged.insert(merged.begin() + pos, left[i]);
+    while (i < left.size())
+    {
+        merged.push_back(left[i]);
         i++;
     }
     while (j < right.size())
-	{
-		pos = std::min(jacobsthalSequence[merged.size() + 1], merged.size());
-        merged.insert(merged.begin() + pos, right[j]);
+    {
+        merged.push_back(right[j]);
         j++;
     }
-	printContainer(merged);
-	return (merged);
+
+    return (merged);
 }
 
 template <typename Container>
@@ -107,14 +103,20 @@ Container FordJohnsonAlgorythm(Container &container)
 		return (container);
 	}
 
-	std::vector<std::size_t> jacobsthalSequence = generateJacobsthalSequence(size);
-	std::size_t middle = size / 2;
+	std::size_t k = 0;
+    while (jacobsthalNumber(k) < size)
+    {
+        k++;
+    }
+	std::size_t jacobsthal = jacobsthalNumber(--k);
 
-	Container left(container.begin(), container.begin() + middle);
-	Container right(container.begin() + middle, container.end());
+	std::cout <<
+	
+	Container left(container.begin(), container.begin() + jacobsthal);
+	Container right(container.begin() + jacobsthal, container.end());
 
 	left = FordJohnsonAlgorythm(left);
 	right = FordJohnsonAlgorythm(right);
 
-	return (mergePair(left, right, jacobsthalSequence));
+	return (mergePair(left, right));
 }

@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 15:00:54 by bgoron            #+#    #+#             */
-/*   Updated: 2024/08/24 19:34:29 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/26 17:23:56 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ void RPN(const char *expression)
 
 	for (; *expression; expression++)
 	{
-		while (*expression == ' ')
-		{
-			expression++;
-		}
+		for (;*expression == ' '; expression++);
 
 		if (isdigit(*expression))
 		{

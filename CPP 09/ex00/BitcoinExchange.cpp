@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 16:34:07 by bgoron            #+#    #+#             */
-/*   Updated: 2024/08/23 13:30:39 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/26 17:38:17 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <fstream>
 #include <iostream>
 #include <map>
+#include <stdexcept>
 #include <string>
 #include <regex.h>
 
@@ -25,7 +26,7 @@ BitcoinExchange::BitcoinExchange(const char *fileName):
 {
 	if (!_CSVfile.is_open() || !_inputFile.is_open())
 	{
-		std::cerr << "Open failed." << std::endl;
+		throw std::runtime_error("Open failed.");
 	}
 }
 

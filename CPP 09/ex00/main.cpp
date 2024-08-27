@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 21:22:33 by bgoron            #+#    #+#             */
-/*   Updated: 2024/08/23 15:01:01 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/26 17:44:37 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,16 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		BitcoinExchange exchange(argv[1]);
-		exchange.readCSV();
-		exchange.printValues();
+		try 
+		{
+			BitcoinExchange exchange(argv[1]);	
+			exchange.readCSV();
+			exchange.printValues();
+		}
+		catch (const std::exception& e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
 	}
 
 	return (0);

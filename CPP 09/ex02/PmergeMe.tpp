@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 09:23:16 by bgoron            #+#    #+#             */
-/*   Updated: 2024/08/27 17:04:47 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/27 17:44:21 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ Container FordJohnsonAlgorythm(Container &container)
 {
 	std::size_t size = container.size();
 
-	if (size == 2)
+	if (size == 1)
 	{
 		return (container);
 	}

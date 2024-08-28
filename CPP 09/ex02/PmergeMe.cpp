@@ -6,7 +6,7 @@
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 07:51:00 by bgoron            #+#    #+#             */
-/*   Updated: 2024/08/27 15:56:12 by bgoron           ###   ########.fr       */
+/*   Updated: 2024/08/28 11:45:57 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ std::size_t jacobsthalNumber(std::size_t index)
 
 	std::size_t prev2 = 0, prev1 = 1, result = 0;
 
-	for (std::size_t i = 2; i <= index; ++i)
+	for (std::size_t i = 2; i <= index; i++)
     {
         result = prev1 + 2 * prev2;
         prev2 = prev1;

@@ -5,14 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgoron <bgoron@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/25 07:51:00 by bgoron            #+#    #+#             */
-/*   Updated: 2024/08/28 11:45:57 by bgoron           ###   ########.fr       */
+/*   Created: 2024/08/26 07:51:00 by bgoron            #+#    #+#             */
+/*   Updated: 2024/08/28 13:44:45 by bgoron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 #include <cstddef>
 #include <iomanip>
+#include <ios>
 #include <limits>
 #include <vector>
 #include <deque>
@@ -53,7 +54,7 @@ void PmergeMe(char **argv)
 	clock_t startVector, endVector, startDeque, endDeque;
 	double elabseTimeVector, elabseTimeDeque;
 
-	if (fillContainer(argv + 1, vector, deque) == false)
+	if (fillContainer(argv, vector, deque) == false)
 	{
 		std::cout << "Error" << std::endl;
 		return ;
@@ -75,6 +76,6 @@ void PmergeMe(char **argv)
 	std::cout << std::setw(6) << "After" << " : ";
 	printContainer(sortedVector);
 
-	std::cout << "Time to process a range of " << vector.size() << " elements with std::vector : " << elabseTimeVector << " us" << std::endl;
-	std::cout << "Time to process a range of " << deque.size() << " elements with std::deque : " << elabseTimeDeque << " us" << std::endl;
+	std::cout << "Time to process a range of " << vector.size() << std::left << std::setw(26) << " elements with std::vector" << " : " << elabseTimeVector << " μs" << std::endl;
+	std::cout << "Time to process a range of " << deque.size() << std::left << std::setw(26) << " elements with std::deque" << " : " << elabseTimeDeque << " μs" << std::endl;
 }
